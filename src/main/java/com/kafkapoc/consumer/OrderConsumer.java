@@ -22,11 +22,11 @@ public class OrderConsumer {
                 event.customerId(),
                 event.totalAmount(),
                 event.items(),
-                event.createdAt()
+                event.createdAt(),
+                event.restaurantId()
         );
 
         repository.save(entity);
         System.out.println("Saved order " + event.orderId());
-        System.out.println("Saved order " + entity.toString());
     }
 }

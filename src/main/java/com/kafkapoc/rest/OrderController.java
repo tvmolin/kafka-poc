@@ -24,7 +24,13 @@ public class OrderController {
 
     @PostMapping
     public OrderCreated createOrder(@RequestBody @Validated OrderCreated request) {
-        OrderCreated event = new OrderCreated(UUID.randomUUID().toString(), request.customerId(), request.totalAmount(), request.items(), Instant.now());
+        OrderCreated event = new OrderCreated(
+                UUID.randomUUID().toString(),
+                request.customerId(),
+                request.totalAmount(),
+                request.items(),
+                Instant.now(),
+                request.restaurantId());
         producer.send(event);
         return event;
     }

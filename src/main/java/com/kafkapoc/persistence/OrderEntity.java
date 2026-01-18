@@ -18,6 +18,8 @@ public class OrderEntity {
 
     private String customerId;
 
+    private String restaurantId;
+
     private double totalAmount;
 
     @ElementCollection
@@ -25,15 +27,15 @@ public class OrderEntity {
 
     private Instant createdAt;
 
-    public OrderEntity() {}
+    public OrderEntity() {
+    }
 
-    public OrderEntity(String orderId, String customerId, double totalAmount, List<String> items, Instant createdAt) {
+    public OrderEntity(String orderId, String customerId, double totalAmount, List<String> items, Instant createdAt, String restaurantId) {
         this.orderId = orderId;
         this.customerId = customerId;
         this.totalAmount = totalAmount;
         this.items = items;
         this.createdAt = createdAt;
+        this.restaurantId = restaurantId;
     }
-
-    // getters/setters omitted for brevity
 }

@@ -14,6 +14,6 @@ public class OrderProducer {
     }
 
     public void send(OrderCreated event) {
-        kafkaTemplate.send(TOPIC, event.orderId(), event);
+        kafkaTemplate.send(TOPIC, event.restaurantId(), event);
     }
 }
