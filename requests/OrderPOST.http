@@ -1,0 +1,9 @@
+POST http://localhost:8080/orders
+Content-Type: application/json
+
+{
+  "customerId": "123",
+  "totalAmount": 49.99,
+  "items": ["item1", "item2"],
+  "createdAt": "2024-01-01T12:00:00Z"
+}
